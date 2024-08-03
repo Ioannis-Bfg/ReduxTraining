@@ -41,14 +41,12 @@ export default function Numpad() {
         dispatch(setSecondNum(temp[1]));
       } else {
         dispatch(setFirstNum(displayValue.toString() + btn.toString()));
-        console.log("testcase", firstNum, operator);
       }
     }
   }
 
   function calc() {
     const value = operate(operator, firstNum, secondNum);
-    console.log("calculated");
     dispatch(setDisplayValue(value));
     dispatch(setFirstNum(value));
     dispatch(setOperator(""));
